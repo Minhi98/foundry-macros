@@ -1,0 +1,117 @@
+{
+  "name": "Automatic Rune Progression",
+  "type": "feat",
+  "effects": [],
+  "system": {
+    "_migration": {
+      "version": 0.961,
+      "previous": null
+    },
+    "description": {
+      "value": "<p>Rule effect implementation of Automatic Rule Progression because PF2e Toolbelt is janky about implementing it.</p><p>Upgrades all fundamental runes for weapons and armor. Shield reinforcing runes are not supported.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "",
+      "authors": "",
+      "license": "OGL",
+      "remaster": false
+    },
+    "rules": [
+      {
+        "key": "ItemAlteration",
+        "itemType": "weapon",
+        "mode": "upgrade",
+        "property": "runes-potency",
+        "predicate": [
+          {
+            "not": "item:trait:alchemical"
+          },
+          {
+            "not": "item:trait:bomb"
+          }
+        ],
+        "value": "ternary(gte(@actor.level,16),3,ternary(gte(@actor.level,10),2,ternary(gte(@actor.level,2),1,0)))"
+      },
+      {
+        "key": "ItemAlteration",
+        "itemType": "weapon",
+        "mode": "upgrade",
+        "property": "runes-striking",
+        "predicate": [
+          {
+            "not": "item:trait:alchemical"
+          },
+          {
+            "not": "item:trait:bomb"
+          }
+        ],
+        "value": "ternary(gte(@actor.level,19),3,ternary(gte(@actor.level,12),2,ternary(gte(@actor.level,4),1,0)))"
+      },
+      {
+        "key": "ItemAlteration",
+        "itemType": "armor",
+        "mode": "upgrade",
+        "property": "runes-potency",
+        "value": "ternary(gte(@actor.level,18),3,ternary(gte(@actor.level,11),2,ternary(gte(@actor.level,5),1,0)))"
+      },
+      {
+        "key": "ItemAlteration",
+        "itemType": "armor",
+        "mode": "upgrade",
+        "property": "runes-resilient",
+        "value": "ternary(gte(@actor.level,20),3,ternary(gte(@actor.level,14),2,ternary(gte(@actor.level,8),1,0)))"
+      }
+    ],
+    "slug": null,
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "level": {
+      "value": 1
+    },
+    "category": "deityboon",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "location": null
+  },
+  "img": "systems/pf2e/icons/equipment/runes/fundamental-weapon-runes/weapon-potency.webp",
+  "folder": null,
+  "ownership": {
+    "default": 2
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.370",
+    "systemId": "pf2e",
+    "systemVersion": "8.7.1",
+    "createdTime": 1795270279666,
+    "modifiedTime": 1795271478031,
+    "lastModifiedBy": "gZfh0LC3ib2fxuri",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "spore-war",
+      "uuid": "Item.7JwCEfVDlKkHKplL",
+      "coreVersion": "14.370",
+      "systemId": "pf2e",
+      "systemVersion": "8.7.1"
+    }
+  }
+}
